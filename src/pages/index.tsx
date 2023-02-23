@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Slider from '@/components/Slider';
+import Calculator from '@/components/Calculator';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <Slider/>
+        <Calculator/>
       </main>
     </>
   )
