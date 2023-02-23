@@ -3,7 +3,12 @@ import Image from "next/image";
 
 import { images } from "public/_index";
 
-import { StyledHeader, StyledContainer, StyledButton, StyledNav } from './styles';
+import { 
+    StyledHeader, 
+    StyledContainer, 
+    StyledButton, 
+    StyledNav 
+} from './styles';
 
 const Header: React.FC = () => {
     
