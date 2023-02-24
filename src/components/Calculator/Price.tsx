@@ -8,7 +8,7 @@ import {
 
 const Price: React.FC = () => {
 
-    const [price, setPrice] = React.useState<string>('0');
+    const [price, setPrice] = React.useState<string>('10');
     
     return(
         <StyledCalculatorBox>
