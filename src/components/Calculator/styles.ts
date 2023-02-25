@@ -31,9 +31,10 @@ export const StyledCalculatorBox = styled.div`
     input{
         max-width: 427px;
     }
-    input[type=range]::-webkit-slider-thumb {
-        background-color: blue;
-    }
+`
+
+export const StyledInputWrapper = styled.div`
+    height: 25px;
 `
 
 export const StyledTextInput = styled.input`
@@ -45,21 +46,22 @@ export const StyledTextInput = styled.input`
     font-size: 30px;
     line-height: 36px;
     color: ${gray};
+    outline: none;
 `
 
 export const StyledRangeInput = styled.input`
-    overflow: hidden;
     -webkit-appearance: none;
-    background-color: ${inputRange};
-    ::-webkit-slider-runnable-track {
-        height: 15px;
-        -webkit-appearance: none;
-    }
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 15px;
+    border: none;
     ::-webkit-slider-thumb {
         -webkit-appearance: none;
         width: 15px;
         height: 15px;
-        background-color: red !important;
-        box-shadow: -427px 0 0 427px ${orange};
+        border-radius: 15px;
+        background: orange;
+        cursor: pointer;
     }
 `

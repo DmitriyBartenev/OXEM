@@ -1,7 +1,8 @@
 import React from "react";
 
 import { 
-    StyledCalculatorBox, 
+    StyledCalculatorBox,
+    StyledInputWrapper,
     StyledRangeInput, 
     StyledTextInput 
 } from './styles';
@@ -15,8 +16,10 @@ const Price: React.FC = () => {
             <label>
                 Стоимость автомобиля 
             </label>
-            <StyledTextInput type='text' value={price} onChange={(e) => setPrice(e.target.value)}/>
-            <StyledRangeInput type='range' min={1} max={4000000} value={price} onChange={(e) => setPrice(e.target.value)}/>
+            <StyledTextInput type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
+            <StyledInputWrapper>
+                <StyledRangeInput type='range' min={0} max={4000000} step={100000} value={price} onChange={(e) => setPrice(e.target.value)}/>
+            </StyledInputWrapper>
         </StyledCalculatorBox>
     )
 }
