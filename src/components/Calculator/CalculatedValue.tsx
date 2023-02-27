@@ -3,7 +3,7 @@ import { StyledCalculatedBox } from "./styles";
 
 interface CalculatedValueProps {
     label: string,
-    sum: number
+    sum: number,
 }
 
 const CalculatedValue: React.FC<CalculatedValueProps> = ({ label, sum }) => {
@@ -11,7 +11,7 @@ const CalculatedValue: React.FC<CalculatedValueProps> = ({ label, sum }) => {
     return(
         <StyledCalculatedBox>
             <p>{label}</p>
-            <span>{sum} ₽</span>
+            <span>{sum.toLocaleString().replace(/,/g, ' ')} ₽</span>
         </StyledCalculatedBox>    
     )
 }

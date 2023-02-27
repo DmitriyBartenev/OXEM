@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Dispatch, SetStateAction, useState} from "react";
 
 import { 
     StyledCalculatorBox,
@@ -14,11 +14,13 @@ interface PriceProps {
     min: number,
     max: number,
     step: number,
+    summa: number,
+    setSumma: Dispatch<SetStateAction<number>>
 }
 
 const Price: React.FC<PriceProps> = ({ label, text, min, max, step }) => {
 
-    const [price, setPrice] = React.useState<string>('0');
+    const [value, setValue] = useState<string>('0');
 
     return(
         <StyledCalculatorBox>
@@ -26,13 +28,13 @@ const Price: React.FC<PriceProps> = ({ label, text, min, max, step }) => {
                 {label}
             </label>
             <StyledInputTextBox>
-                <StyledInputText type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
+                <StyledInputText type='text' value={value} onChange={(e) => setValue(e.target.value)} />
                 <span>{text}</span>
             </StyledInputTextBox>
             <StyledRangeInputBox>
-                <StyledInputRange type='range' min={min} max={max} step={step} value={price} onChange={(e) => setPrice(e.target.value)}/>
+                <StyledInputRange type='range' min={min} max={max} step={step} value={value} onChange={(e) => setValue(e.target.value)}/>
             </StyledRangeInputBox>
-        </StyledCalculatorBox>
+        </StyledCalculatorBox>  
     )
 }
 

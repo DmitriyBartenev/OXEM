@@ -37,6 +37,7 @@ export const StyledInputs = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 `
 
 export const StyledCalculatedValue = styled.div`
@@ -45,6 +46,7 @@ export const StyledCalculatedValue = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 `
 
 export const StyledCalculatorBox = styled.div`
@@ -58,6 +60,7 @@ export const StyledCalculatorBox = styled.div`
     }
     input{
         width: 427px;
+        font-weight: 700;
     }
 `
 
@@ -123,7 +126,7 @@ export const StyledInputRange = styled.input`
 `
 
 export const StyledCalculatedBox = styled.div`
-    height: 100%;
+    min-width: 400px;
     p{
         font-size: 16px;
         line-height: 150%;
