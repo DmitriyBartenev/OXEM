@@ -3,11 +3,13 @@ import styled from "styled-components";
 const darkBlack = '#111111';
 const gray = '#575757';
 const lightGray = '#F3F3F4';
-const inputRange = '#E1E1E1';
+const darkGray = '#EBEBEC';
+const white = '#FFFFFF';
 const orange = '#FF9514';
 
 export const StyledContainer = styled.section`
     margin: 100px 48px 0;
+    color: ${gray};
     h3{
         font-size: 54px;
         line-height: 90%;
@@ -18,6 +20,33 @@ export const StyledContainer = styled.section`
     }
 `
 
+export const StyledButton = styled.button`
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    color: ${white};
+    padding: 16px 93px;
+    background-color: ${orange};
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+`
+
+export const StyledInputs = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const StyledCalculatedValue = styled.div`
+    margin-top: 44px;
+    margin-bottom: 137px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
 export const StyledCalculatorBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -25,31 +54,58 @@ export const StyledCalculatorBox = styled.div`
         font-size: 16px;
         line-height: 20px;
         font-weight: 400;
-        color: ${gray};
         margin-bottom: 24px;
     }
     input{
-        max-width: 427px;
+        width: 427px;
     }
 `
 
-export const StyledInputWrapper = styled.div`
+export const StyledRangeInputBox = styled.div`
     height: 25px;
 `
 
-export const StyledTextInput = styled.input`
-    min-height: 68px;
+export const StyledInputTextBox = styled.div`
+    position: relative; 
+    width: 427px;
+    height: 68px;
+    span{
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 600;
+        width: 72px;
+        height: 54px;
+        background-color: ${darkGray};
+        border-radius: 16px;
+        padding: 15px 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .2s;
+        :hover{
+            background-color: ${gray};
+            color: ${white};
+        }
+    }
+`
+
+export const StyledInputText = styled.input`
+    height: 68px;
     border: none;
     border-radius: 16px;
     background-color: ${lightGray};
-    padding: 16px 24px;
+    padding: 16px 90px 16px 24px;
     font-size: 30px;
     line-height: 36px;
     color: ${gray};
     outline: none;
 `
 
-export const StyledRangeInput = styled.input`
+export const StyledInputRange = styled.input`
     -webkit-appearance: none;
     height: 3px;
     width: 100%;
@@ -63,5 +119,18 @@ export const StyledRangeInput = styled.input`
         border-radius: 15px;
         background: orange;
         cursor: pointer;
+    }
+`
+
+export const StyledCalculatedBox = styled.div`
+    height: 100%;
+    p{
+        font-size: 16px;
+        line-height: 150%;
+    }
+    span{
+        font-size: 54px;
+        font-weight: 800;
+        padding-top: 8px;
     }
 `

@@ -2,24 +2,36 @@ import React from "react";
 
 import { 
     StyledCalculatorBox,
-    StyledInputWrapper,
-    StyledRangeInput, 
-    StyledTextInput 
+    StyledRangeInputBox,
+    StyledInputRange, 
+    StyledInputText,
+    StyledInputTextBox
 } from './styles';
 
-const Price: React.FC = () => {
+interface PriceProps {
+    label: string,
+    text: string,
+    min: number,
+    max: number,
+    step: number,
+}
+
+const Price: React.FC<PriceProps> = ({ label, text, min, max, step }) => {
 
     const [price, setPrice] = React.useState<string>('0');
-    
+
     return(
         <StyledCalculatorBox>
             <label>
-                Стоимость автомобиля 
+                {label}
             </label>
-            <StyledTextInput type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
-            <StyledInputWrapper>
-                <StyledRangeInput type='range' min={0} max={4000000} step={100000} value={price} onChange={(e) => setPrice(e.target.value)}/>
-            </StyledInputWrapper>
+            <StyledInputTextBox>
+                <StyledInputText type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
+                <span>{text}</span>
+            </StyledInputTextBox>
+            <StyledRangeInputBox>
+                <StyledInputRange type='range' min={min} max={max} step={step} value={price} onChange={(e) => setPrice(e.target.value)}/>
+            </StyledRangeInputBox>
         </StyledCalculatorBox>
     )
 }
