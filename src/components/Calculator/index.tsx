@@ -13,16 +13,35 @@ import {
     StyledCalculatedBox 
 } from './styles';
 
+interface FormValues {
+    carPrice: string,
+    deposit: string,
+    duration: string
+}
+
 const Calculator: React.FC = () => {
 
-    const [carPrice, setCarPrice] = useState<string>('100000');
-    const [deposit, setDeposit] = useState<string>('50000');
-    const [duration, setDuration] = useState<string>('1');
+    const [inputValues, setInputValues] = useState<FormValues>({
+        carPrice:'100000',
+        deposit:'50000',
+        duration:'1'
+    });
 
-    const rate = Math.round((parseInt(deposit) / parseInt(carPrice))*100);
+    const { carPrice, deposit, duration } = inputValues;
 
-    const sum = Math.round(parseInt(carPrice) *(1-rate/100));
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValues({
+            ...inputValues,
+            [event.target.name]: event.target.value
+        })
+    }
 
+    const sum = Math.round(parseInt(carPrice) *(1-12/100));
+
+    const loanAmount = parseInt(carPrice) - parseInt(deposit);
+    const monthlyInterestRate = (12 / 100) / 12;
+    const discountFactor = ((1 + monthlyInterestRate) ** parseInt(duration) - 1) / (monthlyInterestRate * (1 + monthlyInterestRate) ** parseInt(duration));
+    const monthlyPayment = Math.round((loanAmount / discountFactor));
 
     return(
         <StyledContainer>
@@ -35,18 +54,20 @@ const Calculator: React.FC = () => {
                     <StyledInputTextBox>
                         <StyledInputText 
                             type='text'
+                            name='carPrice'
                             value={carPrice}
-                            onChange={(e) => setCarPrice(e.target.value)}/>
+                            onChange={handleInputChange}/>
                         <span>₽</span>
                     </StyledInputTextBox>
                     <StyledRangeInputBox>
                         <StyledInputRange 
                             type='range' 
+                            name='carPrice'
                             min={100_000} 
                             max={4_000_000} 
                             step={100_000}
                             value={carPrice}
-                            onChange={(e) => setCarPrice(e.target.value)}/>
+                            onChange={handleInputChange}/>
                     </StyledRangeInputBox>
                 </StyledCalculatorBox>
                 <StyledCalculatorBox>
@@ -56,18 +77,20 @@ const Calculator: React.FC = () => {
                     <StyledInputTextBox>
                         <StyledInputText 
                             type='text'
+                            name='deposit'
                             value={deposit}
-                            onChange={(e) => setDeposit(e.target.value)}/>
-                        <span>{rate}%</span>
+                            onChange={handleInputChange}/>
+                        <span>12%</span>
                     </StyledInputTextBox>
                     <StyledRangeInputBox>
                         <StyledInputRange 
                             type='range' 
+                            name='deposit'
                             min={50_000} 
                             max={carPrice} 
                             step={50_000}
                             value={deposit}
-                            onChange={(e) => setDeposit(e.target.value)}/>
+                            onChange={handleInputChange}/>
                     </StyledRangeInputBox>
                 </StyledCalculatorBox>  
                 <StyledCalculatorBox>
@@ -77,18 +100,20 @@ const Calculator: React.FC = () => {
                     <StyledInputTextBox>
                         <StyledInputText 
                             type='text'
+                            name='duration'
                             value={duration}
-                            onChange={(e) => setDuration(e.target.value)}/>
+                            onChange={handleInputChange}/>
                         <span>мес.</span>
                     </StyledInputTextBox>
                     <StyledRangeInputBox>
                         <StyledInputRange 
                             type='range' 
+                            name='duration'
                             min={1} 
                             max={60} 
-                            step={6}
+                            step={1}
                             value={duration}
-                            onChange={(e) => setDuration(e.target.value)}/>
+                            onChange={handleInputChange}/>
                     </StyledRangeInputBox>
                 </StyledCalculatorBox>    
             </StyledInputs>
@@ -99,7 +124,7 @@ const Calculator: React.FC = () => {
                 </StyledCalculatedBox>   
                 <StyledCalculatedBox>
                     <p>Ежемесячный платеж от</p>
-                    <span>10000 ₽</span>
+                    <span>{monthlyPayment.toLocaleString().replace(/,/g, ' ')} ₽</span>
                 </StyledCalculatedBox>   
                 <StyledButton>
                     Оставить заявку

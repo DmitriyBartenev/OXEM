@@ -44,3 +44,73 @@ export const StyledButton = styled.button`
     color: ${white};
     cursor: pointer;
 `
+
+export const StyledSlider = styled.div`
+    position: relative;
+`
+
+export const StyledSliderActions = styled.div`
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 48px;
+    bottom: 44px;
+    right: 0;
+    span{
+        color: ${white};
+    }
+`
+
+
+export const StyledIndicators = styled.div`
+    width: 134px;
+    height: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+        width: 6px;
+        height: 6px;
+        background-color: ${white};
+        opacity: .5;
+        border-radius: 50%;
+        :hover{
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+        }
+    }
+`
+
+export const StyledActions = styled.div`
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: solid 2px ${white};
+        color: ${white};
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: .5;
+        transition: .1s;
+        :hover{
+            width: 48px;
+            height: 48px;
+            opacity: 1;
+        }
+        :first-child{
+            svg{
+                transform: rotate(180deg);
+            }
+        }
+    }
+`

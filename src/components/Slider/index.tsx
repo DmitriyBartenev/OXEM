@@ -1,18 +1,23 @@
 import React from "react";
 import Image from "next/image";
 
-import { images } from "public/_index";
+import { images, icons } from "public/_index";
 
 import { 
     StyledSliderContainer, 
     StyledButton,
-    StyledTextContainer 
+    StyledTextContainer,
+    StyledSlider,
+    StyledIndicators,
+    StyledActions,
+    StyledSliderActions
 } from './styles';
 
 const Slider: React.FC = () => {
 
     const { Slider } = images;
-    
+    const { Arrow } = icons;
+
     return(
         <StyledSliderContainer>
             <StyledTextContainer>
@@ -22,7 +27,26 @@ const Slider: React.FC = () => {
                     Оставить заявку
                 </StyledButton>
             </StyledTextContainer>
-            <Image src={Slider} alt='car image' title='car' width={841} height={472}/>
+            <StyledSlider>
+                <Image src={Slider} alt='car image' title='car' width={841} height={472}/>
+                <StyledSliderActions>
+                    <StyledIndicators>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </StyledIndicators>
+                    <StyledActions>
+                        <button>
+                            <Arrow/>
+                        </button>
+                        <button>
+                            <Arrow/>
+                        </button>
+                    </StyledActions>
+                </StyledSliderActions>
+            </StyledSlider>
         </StyledSliderContainer>
     )
 }
