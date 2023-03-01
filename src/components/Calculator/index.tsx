@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
+import InputBox from './InputBox';
+
 import { 
     StyledContainer, 
     StyledInputs, 
     StyledCalculatedValue, 
-    StyledButton, 
-    StyledCalculatorBox, 
-    StyledInputTextBox, 
-    StyledInputText, 
-    StyledRangeInputBox, 
-    StyledInputRange,
+    StyledButton,
     StyledCalculatedBox 
 } from './styles';
 
@@ -47,75 +44,36 @@ const Calculator: React.FC = () => {
         <StyledContainer>
             <h3>Рассчитайте стоимость автомобиля в лизинг</h3>
             <StyledInputs>
-                <StyledCalculatorBox>
-                    <label>
-                        Стоимость автомобиля
-                    </label>
-                    <StyledInputTextBox>
-                        <StyledInputText 
-                            type='text'
-                            name='carPrice'
-                            value={carPrice}
-                            onChange={handleInputChange}/>
-                        <span>₽</span>
-                    </StyledInputTextBox>
-                    <StyledRangeInputBox>
-                        <StyledInputRange 
-                            type='range' 
-                            name='carPrice'
-                            min={100_000} 
-                            max={4_000_000} 
-                            step={100_000}
-                            value={carPrice}
-                            onChange={handleInputChange}/>
-                    </StyledRangeInputBox>
-                </StyledCalculatorBox>
-                <StyledCalculatorBox>
-                    <label>
-                        Первоначальный взнос
-                    </label>
-                    <StyledInputTextBox>
-                        <StyledInputText 
-                            type='text'
-                            name='deposit'
-                            value={deposit}
-                            onChange={handleInputChange}/>
-                        <span>12%</span>
-                    </StyledInputTextBox>
-                    <StyledRangeInputBox>
-                        <StyledInputRange 
-                            type='range' 
-                            name='deposit'
-                            min={50_000} 
-                            max={carPrice} 
-                            step={50_000}
-                            value={deposit}
-                            onChange={handleInputChange}/>
-                    </StyledRangeInputBox>
-                </StyledCalculatorBox>  
-                <StyledCalculatorBox>
-                    <label>
-                        Срок лизинга
-                    </label>
-                    <StyledInputTextBox>
-                        <StyledInputText 
-                            type='text'
-                            name='duration'
-                            value={duration}
-                            onChange={handleInputChange}/>
-                        <span>мес.</span>
-                    </StyledInputTextBox>
-                    <StyledRangeInputBox>
-                        <StyledInputRange 
-                            type='range' 
-                            name='duration'
-                            min={1} 
-                            max={60} 
-                            step={1}
-                            value={duration}
-                            onChange={handleInputChange}/>
-                    </StyledRangeInputBox>
-                </StyledCalculatorBox>    
+            <InputBox
+                label="Стоимость автомобиля"
+                name="carPrice"
+                value={carPrice}
+                min={100_000}
+                max={4_000_000}
+                step={100_000}
+                suffix="₽"
+                handleInputChange={handleInputChange}
+            />
+            <InputBox
+                label="Первоначальный взнос"
+                name="deposit"
+                value={deposit}
+                min={50_000}
+                max={+carPrice}
+                step={50_000}
+                suffix="12%"
+                handleInputChange={handleInputChange}
+            />
+            <InputBox
+                label="Срок лизинга"
+                name="duration"
+                value={duration}
+                min={1}
+                max={60}
+                step={1}
+                suffix="мес."
+                handleInputChange={handleInputChange}
+            />        
             </StyledInputs>
             <StyledCalculatedValue>
                 <StyledCalculatedBox>
