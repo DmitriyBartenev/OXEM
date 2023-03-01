@@ -10,10 +10,6 @@ export const StyledSliderContainer = styled.section`
     background-color: ${darkBlack};
     border-radius: 32px;
     display: flex;
-    img{
-        border-radius: 32px;
-        height: 100%;
-    }
 `
 
 export const StyledTextContainer = styled.div`
@@ -47,22 +43,29 @@ export const StyledButton = styled.button`
 
 export const StyledSlider = styled.div`
     position: relative;
+    img{
+        opacity: .8;
+        height: 100%;
+        width: 100% 100%;
+        border-radius: 32px;
+        border-bottom-left-radius:  0;
+        border-top-left-radius:  0;
+    }
 `
 
 export const StyledSliderActions = styled.div`
     position: absolute;
+    padding: 0 44px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     height: 48px;
     bottom: 44px;
-    right: 0;
     span{
         color: ${white};
     }
 `
-
 
 export const StyledIndicators = styled.div`
     width: 134px;
@@ -76,18 +79,13 @@ export const StyledIndicators = styled.div`
         background-color: ${white};
         opacity: .5;
         border-radius: 50%;
-        :hover{
-            width: 12px;
-            height: 12px;
-            opacity: 1;
-        }
     }
 `
 
 export const StyledActions = styled.div`
-    width: 88px;
+    min-width: 120px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     button{
         width: 24px;
@@ -102,12 +100,17 @@ export const StyledActions = styled.div`
         align-items: center;
         opacity: .5;
         transition: .1s;
+        margin: 0 8px;
         :hover{
+            svg{
+                width: 8px;
+                height: 16px;
+            }
             width: 48px;
             height: 48px;
             opacity: 1;
         }
-        :first-child{
+        :last-child{
             svg{
                 transform: rotate(180deg);
             }

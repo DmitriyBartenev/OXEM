@@ -1,5 +1,9 @@
 import MainLogo from './mainLogo.png';
-import Slider from './slider.jpg';
+import Mercedes from './mercedes.jpg';
+import Audi from './audi.jpg';
+import Bmw from './bmw.jpg';
+import Chevrolet from './chevrolet.jpg';
+import Porsche from './porsche.jpg';
 import Arrow from './arrow.svg';
 
 export const icons = {
@@ -8,5 +12,9 @@ export const icons = {
 
 export const images = {
     MainLogo,
-    Slider
+    Mercedes, 
+    Audi,
+    Bmw,
+    Chevrolet,
+    Porsche
 };
