@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import { images, icons } from "public/_index";
+import Indicators from "./Indicators";
 
 import { 
     StyledSliderContainer, 
@@ -9,16 +9,17 @@ import {
     StyledTextContainer,
     StyledSlider,
     StyledIndicators,
-    StyledActions,
     StyledSliderActions
+    
 } from './styles';
+
+import { images } from "public/_index";
 
 const Slider: React.FC = () => {
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     const { Mercedes, Audi, Bmw, Chevrolet, Porsche } = images;
-    const { Arrow } = icons;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -75,14 +76,9 @@ const Slider: React.FC = () => {
                             ))
                         }
                     </StyledIndicators>
-                    <StyledActions>
-                        <button onClick={() => setCurrentIndex((currentIndex + 5 - 1) % 5)}>
-                            <Arrow />
-                        </button>
-                        <button onClick={() => setCurrentIndex((currentIndex + 1) % 5)}>
-                            <Arrow />
-                        </button>
-                    </StyledActions>
+                    <Indicators 
+                        currentIndex={currentIndex} 
+                        setCurrentIndex={setCurrentIndex}/>
                 </StyledSliderActions>
             </StyledSlider>
         </StyledSliderContainer>
