@@ -5,6 +5,9 @@ const orange = '#FF9514';
 const gray = '#C4C4C4';
 const blackP = 'rgba(17, 17, 17, 0.5)';
 const blackA = '#575757';
+const dropdownBlack = '#111111';
+const dropdownBorder = '#F3F3F4';
+const lightGray = '#F1F1F1';
 
 export const StyledHeader = styled.header`
     width: 100%;
@@ -32,13 +35,15 @@ export const StyledContainer = styled.div`
 `
     
 export const StyledNav = styled.nav`
-    a{
+    position: relative;
+    span{
         margin: 6px 16px;
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
         color: ${blackA};  
         position: relative;    
+        cursor: pointer;
         ::after{
             content: "";
             position: absolute;
@@ -75,5 +80,30 @@ export const StyledButton = styled.button`
     :hover{
         background-color: ${orange};
         color: ${white};
+    }
+`
+
+export const StyledDropdown = styled.div`
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: ${white};
+    z-index: 2;
+    padding: 8px 0;
+    border: solid 1px ${dropdownBorder};
+    border-radius: 15px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    ul{
+        list-style: none;
+        color: ${dropdownBlack};
+        li{
+            padding: 8px 16px;
+            cursor: pointer;
+            :hover{
+                background-color: ${lightGray};
+            }
+        }
     }
 `

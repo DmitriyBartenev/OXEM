@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+
+import Dropdown from "./Dropdown";
 
 import { images } from "public/_index";
 
@@ -11,6 +13,8 @@ import {
 } from './styles';
 
 const Header: React.FC = () => {
+
+    const [show, setShow] = useState<boolean>(false);
     
     const { MainLogo } = images;
     
@@ -22,11 +26,16 @@ const Header: React.FC = () => {
             </StyledContainer>
             <StyledContainer>
                 <StyledNav>
-                    <a href='#'>Лизинг</a>
-                    <a href='#'>Каталог</a>
-                    <a href='#'>О нас</a>
+                    <span onClick={() => setShow(!show)}>Лизинг</span>
+                    <span>Каталог</span>
+                    <span>О нас</span>
+                    {
+                        show && <Dropdown/>
+                    }
                 </StyledNav>
-                <StyledButton>Оставить заявку</StyledButton>
+                <StyledButton>
+                    Оставить заявку
+                </StyledButton>
             </StyledContainer>
         </StyledHeader>
     )
