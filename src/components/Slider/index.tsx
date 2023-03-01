@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 import Actions from "./Actions";
+import Indicators from "./Indicators";
 
 import { 
     StyledSliderContainer, 
     StyledButton,
     StyledTextContainer,
     StyledSlider,
-    StyledIndicators,
     StyledSliderActions
     
 } from './styles';
@@ -21,6 +21,8 @@ const Slider: React.FC = () => {
 
     const { Mercedes, Audi, Bmw, Chevrolet, Porsche } = images;
 
+    const sliderImages = { Mercedes, Audi, Bmw, Chevrolet, Porsche }; 
+    
     useEffect(() => {
         const interval = setInterval(() => {
           setCurrentIndex(prev => {
@@ -34,22 +36,6 @@ const Slider: React.FC = () => {
       
         return () => clearInterval(interval);
     }, []);
-
-    const sliderImages = {
-        Mercedes,
-        Audi,
-        Bmw,
-        Chevrolet,
-        Porsche
-    }
-
-    const dotStyles = Array.from({ length: 5 }, (_, i) => {
-        return {
-            width: currentIndex === i ? '12px' : '6px',
-            height: currentIndex === i ? '12px' : '6px',
-            opacity: currentIndex === i ? '1' : '0.5'
-        }
-    });
 
     return(
         <StyledSliderContainer>
@@ -69,6 +55,8 @@ const Slider: React.FC = () => {
                     height={473}
                     />
                 <StyledSliderActions>
+                    <Indicators 
+                        currentIndex={currentIndex}/>
                     <Actions 
                         currentIndex={currentIndex} 
                         setCurrentIndex={setCurrentIndex}/>
