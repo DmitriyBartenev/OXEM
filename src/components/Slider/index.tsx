@@ -25,13 +25,14 @@ const Slider: React.FC = () => {
     
     useEffect(() => {
         const interval = setInterval(() => {
-          setCurrentIndex(prev => {
+
+            setCurrentIndex(prev => {
             if (prev >= 4) {
-              return 0;
+                return 0;
             } else {
-              return prev + 1;
+                return prev + 1;
             }
-          });
+            });
         }, 5000);
       
         return () => clearInterval(interval);

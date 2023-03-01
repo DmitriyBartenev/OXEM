@@ -30,7 +30,7 @@ const InputBox: React.FC<InputBoxProps> = ({ label, name, value, min, max, step,
             <StyledInputText 
               type='text'
               name={name}
-              value={value}
+              value={parseInt(value).toLocaleString()}
               onChange={handleInputChange}
             />
             <span>{suffix}</span>

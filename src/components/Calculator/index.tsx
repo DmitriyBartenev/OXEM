@@ -19,7 +19,7 @@ interface FormValues {
 const Calculator: React.FC = () => {
 
     const [inputValues, setInputValues] = useState<FormValues>({
-        carPrice:'100000',
+        carPrice: '100000',
         deposit:'50000',
         duration:'1'
     });
@@ -33,11 +33,11 @@ const Calculator: React.FC = () => {
         })
     }
 
-    const sum = Math.round(parseInt(carPrice) *(1-12/100));
+    const sum = Math.round(+(carPrice) *(1 - 12 / 100));
 
-    const loanAmount = parseInt(carPrice) - parseInt(deposit);
+    const loanAmount = +(carPrice) - +(deposit);
     const monthlyInterestRate = (12 / 100) / 12;
-    const discountFactor = ((1 + monthlyInterestRate) ** parseInt(duration) - 1) / (monthlyInterestRate * (1 + monthlyInterestRate) ** parseInt(duration));
+    const discountFactor = ((1 + monthlyInterestRate) ** +(duration) - 1) / (monthlyInterestRate * (1 + monthlyInterestRate) ** +(duration));
     const monthlyPayment = Math.round((loanAmount / discountFactor));
 
     return(
