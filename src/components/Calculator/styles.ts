@@ -28,9 +28,14 @@ export const StyledButton = styled.button`
     padding: 16px 93px;
     background-color: ${orange};
     border-radius: 40px;
-    border: none;
+    border: solid 1px ${orange};
     cursor: pointer;
     letter-spacing: 1px;
+    transition: .2s;
+    :hover{
+        background-color: ${white};
+        color: ${orange};
+    }
 `
 
 export const StyledInputs = styled.div`

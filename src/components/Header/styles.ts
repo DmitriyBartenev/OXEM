@@ -33,11 +33,30 @@ export const StyledContainer = styled.div`
     
 export const StyledNav = styled.nav`
     a{
-        padding: 6px 16px;
+        margin: 6px 16px;
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
-        color: ${blackA};       
+        color: ${blackA};  
+        position: relative;    
+        ::after{
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: ${blackA};
+            opacity: 0;
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+        :hover::after{
+            opacity: 1;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 `
 
@@ -52,4 +71,9 @@ export const StyledButton = styled.button`
     line-height: 24px;
     font-weight: 700;
     margin-left: 24px;
+    transition: .2s;
+    :hover{
+        background-color: ${orange};
+        color: ${white};
+    }
 `

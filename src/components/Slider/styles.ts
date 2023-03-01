@@ -39,6 +39,11 @@ export const StyledButton = styled.button`
     border-radius: 40px;
     color: ${white};
     cursor: pointer;
+    transition: .2s;
+    :hover{
+        background-color: ${white};
+        color: ${darkBlack};
+    }
 `
 
 export const StyledSlider = styled.div`
