@@ -4,12 +4,12 @@ import { icons } from "public/_index";
 
 import { StyledActions } from "./styles";
 
-interface IndicatorsProps {
+interface ActionsProps {
     currentIndex: number,
     setCurrentIndex: (elem: number) => void
 }
 
-const Indicators: React.FC<IndicatorsProps> = ({ currentIndex, setCurrentIndex }) => {
+const Actions: React.FC<ActionsProps> = ({ currentIndex, setCurrentIndex }) => {
     
     const { Arrow } = icons;
 
@@ -25,4 +25,4 @@ const Indicators: React.FC<IndicatorsProps> = ({ currentIndex, setCurrentIndex }
     )
 }
 
-export default Indicators;
+export default Actions;

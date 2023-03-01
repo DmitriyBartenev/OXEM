@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import Indicators from "./Indicators";
+import Actions from "./Actions";
 
 import { 
     StyledSliderContainer, 
@@ -69,14 +69,7 @@ const Slider: React.FC = () => {
                     height={473}
                     />
                 <StyledSliderActions>
-                    <StyledIndicators>
-                        {
-                            dotStyles.map((style, id) => (
-                                <span key={id} style={style}/>
-                            ))
-                        }
-                    </StyledIndicators>
-                    <Indicators 
+                    <Actions 
                         currentIndex={currentIndex} 
                         setCurrentIndex={setCurrentIndex}/>
                 </StyledSliderActions>
