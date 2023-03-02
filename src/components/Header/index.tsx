@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import Dropdown from "./Dropdown";
+import Popup from "../Popup";
 
 import { images } from "public/_index";
 
@@ -14,9 +15,15 @@ import {
 
 const Header: React.FC = () => {
 
-    const [show, setShow] = useState<boolean>(false);
-    
+    const [showDropdown, setShowDropdown] = useState<boolean>(false);
+    const [openPopup, setOpenPopup] = useState<boolean>(false);
+
     const { MainLogo } = images;
+
+    const onOpenPopup = () => {
+        setOpenPopup(true);
+        setShowDropdown(false);
+    }
     
     return(
         <StyledHeader>
@@ -26,17 +33,24 @@ const Header: React.FC = () => {
             </StyledContainer>
             <StyledContainer>
                 <StyledNav>
-                    <span onClick={() => setShow(!show)}>Лизинг</span>
+                    <span 
+                        onClick={() => setShowDropdown(!showDropdown)}>
+                        Лизинг
+                    </span>
                     <span>Каталог</span>
                     <span>О нас</span>
                     {
-                        show && <Dropdown/>
+                        showDropdown && <Dropdown/>
                     }
                 </StyledNav>
-                <StyledButton>
+                <StyledButton 
+                    onClick={onOpenPopup}>
                     Оставить заявку
                 </StyledButton>
             </StyledContainer>
+            {
+                openPopup && <Popup setOpenPopup={setOpenPopup}/>
+            }
         </StyledHeader>
     )
 }
