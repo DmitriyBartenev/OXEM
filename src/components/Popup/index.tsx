@@ -37,7 +37,8 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                         <WhatsappIcon/>
                         <TelegramIcon/>
                     </StyledIcons>
-                    <CloseIcon onClick={() => setOpenPopup(false)}/>
+                    <CloseIcon 
+                        onClick={() => setOpenPopup(false)}/>
                 </StyledPopup>
             </StyledPopupContainer>
         </StyledPopupBox>
