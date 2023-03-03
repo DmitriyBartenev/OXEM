@@ -2,7 +2,14 @@ import React, { Dispatch, SetStateAction } from "react";
 
 import { icons } from "public/_index";
 
-import { StyledPopupBox, StyledPopup, StyledPopupContainer, StyledInputBox, StyledSubmit, StyledIcons } from "./styles";
+import { 
+    StyledPopupBox, 
+    StyledPopup, 
+    StyledPopupContainer, 
+    StyledInputBox, 
+    StyledSubmit, 
+    StyledIcons 
+} from "./styles";
 
 interface PopupProps {
     setOpenPopup: Dispatch<SetStateAction<boolean>>
