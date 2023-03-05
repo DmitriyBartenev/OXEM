@@ -33,7 +33,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                                 />
                             <input 
                                 type='text'
-                                placeholder="Ваше Имя"/>
+                                placeholder="Имя"/>
                         </StyledInputBox>
                         <StyledSubmit>
                             <p>Нажимая на кнопку «Оставить заявку»,  я даю согласие <span>на обработку персональных данных</span></p>
