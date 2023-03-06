@@ -6,6 +6,9 @@ const gray = '#828282';
 const darkGray = '#575757';
 const black = '#111111';
 const orange = '#FF9514';
+const red = 'rgba(255, 71, 60, 1)';
+const paleOrange = 'rgba(255, 149, 20, 0.2)';
+const paleRed = 'rgba(255, 99, 89, 0.5)';
 
 export const StyledPopupBox = styled.div`
     position: fixed;
@@ -59,6 +62,34 @@ export const StyledPopup = styled.div`
     }
 `
 
+export const StyledSuccessfulMessage = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    background-color: ${paleOrange};
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: solid 1px ${orange};
+    color: ${orange};
+`
+
+export const StyledErrorMessage = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    background-color: ${paleRed};
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: solid 1px ${red};
+    color: ${red};
+`
+
 export const StyledInputBox = styled.div`
     width: 100%;
     display: flex;
@@ -78,6 +109,19 @@ export const StyledInputBox = styled.div`
         ::placeholder{
             color: rgba(87, 87, 87, 0.4);   
         }
+    }
+`
+
+export const StyledInputContainer = styled.div`
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span{
+        font-size: 12px;
+        font-weight: 400;
+        color: ${gray};
+        margin-top: 5px;
     }
 `
 
