@@ -10,7 +10,11 @@ const red = 'rgba(255, 71, 60, 1)';
 const paleOrange = 'rgba(255, 149, 20, 0.2)';
 const paleRed = 'rgba(255, 99, 89, 0.5)';
 
-export const StyledPopupBox = styled.div`
+interface PopupBoxProps {
+    openPopup: boolean
+}
+
+export const StyledPopupBox = styled.div<PopupBoxProps>`
     position: fixed;
     z-index: 3;
     background-color: #00000050;
@@ -21,6 +25,16 @@ export const StyledPopupBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    @keyframes showPopup {
+        0% {height: 0}
+        100% {height: 100vh}
+    }
+    @keyframes hidePopup {
+        100% {height: 0}
+        0% {height: 100vh}
+    }
+    animation-name: ${({openPopup}) => openPopup ? 'showPopup' : 'hidePopup'};
+    animation-duration: 2s;
 `
 
 export const StyledPopupContainer = styled.div`

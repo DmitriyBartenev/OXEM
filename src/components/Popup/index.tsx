@@ -24,6 +24,7 @@ type Inputs = {
 }
 
 interface PopupProps {
+    openPopup: boolean,
     setOpenPopup: Dispatch<SetStateAction<boolean>>
 }
 
@@ -35,7 +36,7 @@ const schema = yup.object().shape({
     name: yup.string().required('Name field is a required').matches(nameRegExp, 'Name is not valid')
 });
 
-const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
+const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
 
     const [isSuccessful, setSuccessful] = useState<boolean>(false);
     const [isError, setError] = useState<boolean>(false);
@@ -71,7 +72,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
     }
 
     return(
-        <StyledPopupBox>
+        <StyledPopupBox openPopup={openPopup}>
             <StyledPopupContainer>
                 <StyledPopup>
                     <h3>Онлайн-заявка</h3>
@@ -118,7 +119,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                         <WhatsappIcon/>
                         <TelegramIcon/>
                     </StyledIcons>
-                    <CloseIcon onClick={() => setOpenPopup(false)}/>
+                    <CloseIcon onClick={() => setOpenPopup(!openPopup)}/>
                 </StyledPopup>
             </StyledPopupContainer>
         </StyledPopupBox>

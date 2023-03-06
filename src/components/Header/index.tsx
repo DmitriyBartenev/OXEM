@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                 </StyledButton>
             </StyledContainer>
             {
-                openPopup && <Popup setOpenPopup={setOpenPopup}/>
+                openPopup && <Popup setOpenPopup={setOpenPopup} openPopup={openPopup}/>
             }
         </StyledHeader>
     )
