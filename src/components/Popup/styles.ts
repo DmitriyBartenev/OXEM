@@ -63,9 +63,17 @@ export const StyledPopup = styled.div`
         position: absolute;
         top: 48px;
         right: 48px;
-    }
-    path{
-        color: ${gray};
+        transition: .3s;
+        path{
+            color: ${gray};
+            transition: .3s;
+        }
+        :hover{
+            color: ${gray};
+            path{
+                color: ${lightGray};
+            }
+        }
     }
     p{
         font-size: 16px;

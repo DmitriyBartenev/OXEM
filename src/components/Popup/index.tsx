@@ -69,7 +69,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
             const status = (error as Error).message;
             console.log(status); 
         }
-    }
+    };
 
     return(
         <StyledPopupBox openPopup={openPopup}>

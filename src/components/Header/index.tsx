@@ -34,7 +34,8 @@ const Header: React.FC = () => {
             <StyledContainer>
                 <StyledNav>
                     <span 
-                        onClick={() => setShowDropdown(!showDropdown)}>
+                        onClick={() => setShowDropdown(!showDropdown)}
+                        >
                         Лизинг
                     </span>
                     <span>Каталог</span>
