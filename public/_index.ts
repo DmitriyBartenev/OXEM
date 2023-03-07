@@ -8,12 +8,14 @@ import Arrow from './arrow.svg';
 import CloseIcon from './close.svg';
 import TelegramIcon from './telegram.svg';
 import WhatsappIcon from './whatsapp.svg';
+import CheckIcon from './check.svg';
 
 export const icons = {
     Arrow,
     CloseIcon,
     TelegramIcon,
-    WhatsappIcon
+    WhatsappIcon,
+    CheckIcon
 }
 
 export const images = {

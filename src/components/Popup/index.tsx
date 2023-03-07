@@ -15,7 +15,8 @@ import {
     StyledIcons,
     StyledInputContainer,
     StyledSuccessfulMessage,
-    StyledErrorMessage 
+    StyledErrorMessage,
+    StyledIcon 
 } from "./styles";
 
 type Inputs = {
@@ -29,7 +30,7 @@ interface PopupProps {
 }
 
 const phoneRegExp = /^\+7 \(\d{3}\) \d{3} \d{2} \d{2}$/;
-const nameRegExp = /^[A-Za-z]+$/;
+const nameRegExp = /^[А-Яа-я\s]+$/;
 
 const schema = yup.object().shape({
     phoneNumber: yup.string().required('Phone field is a required').matches(phoneRegExp, 'Phone number is not valid'),
@@ -41,11 +42,11 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
     const [isSuccessful, setSuccessful] = useState<boolean>(false);
     const [isError, setError] = useState<boolean>(false);
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
+    const { register, handleSubmit, reset, formState: { errors }, getValues } = useForm<Inputs>({
         resolver: yupResolver(schema)
     });
 
-    const { CloseIcon, WhatsappIcon, TelegramIcon } = icons;
+    const { CloseIcon, WhatsappIcon, TelegramIcon, CheckIcon } = icons;
 
     const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
 
@@ -84,16 +85,24 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
                                     type='text'
                                     placeholder="+7 (921) 123 45 67"    
                                     {...register('phoneNumber')}
+                                    className={errors.phoneNumber?.message ? 'error' : ''}
                                     />
-                                <span>{errors.phoneNumber?.message}</span>
+                                {
+                                    !errors.phoneNumber?.message && getValues('phoneNumber')?.length && <StyledIcon><CheckIcon/></StyledIcon>
+                                }
+                                <p>{errors.phoneNumber?.message}</p>
                             </StyledInputContainer>
                             <StyledInputContainer>
                                 <input 
                                     type='text'
                                     placeholder="Имя"
                                     {...register('name')}
+                                    className={errors.name?.message ? 'error' : ''}
                                     />
-                                <span>{errors.name?.message}</span>
+                                {
+                                    !errors.name?.message && getValues('name')?.length && <StyledIcon><CheckIcon/></StyledIcon>
+                                }
+                                <p>{errors.name?.message}</p>
                             </StyledInputContainer>
                         </StyledInputBox>
                         {

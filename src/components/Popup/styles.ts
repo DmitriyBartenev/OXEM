@@ -9,6 +9,8 @@ const orange = '#FF9514';
 const red = 'rgba(255, 71, 60, 1)';
 const paleOrange = 'rgba(255, 149, 20, 0.2)';
 const paleRed = 'rgba(255, 99, 89, 0.5)';
+const error = '#D53234';
+const green = '#77DE8D';
 
 export const StyledPopupBox = styled.div`
     position: fixed;
@@ -113,33 +115,61 @@ export const StyledInputBox = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+`
+
+export const StyledInputContainer = styled.div`
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    position: relative;
+    .error{
+        border: solid 1px ${error};
+    }
     input{
         min-width: 311px;
         min-height: 48px;
         padding: 12px 24px;
         border-radius: 16px;
         background-color: ${lightGray};
-        border: none;
+        border: solid 1px ${lightGray};
         color: ${darkGray};
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
+        outline: none;
         ::placeholder{
             color: rgba(87, 87, 87, 0.4);   
         }
+        :focus{
+            border: solid 1px ${orange};
+            box-shadow: 0px 0px 4px 3px rgba(255, 149, 20, 0.5);
+        }
+    }
+    p{
+        font-size: 12px;
+        font-weight: 400;
+        color: ${error};
+        margin-top: 5px;
+        margin-bottom: 0;
     }
 `
 
-export const StyledInputContainer = styled.div`
-    min-height: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    span{
-        font-size: 12px;
-        font-weight: 400;
-        color: ${gray};
-        margin-top: 5px;
+export const StyledIcon = styled.span`
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px;
+    background-color: ${green};
+    border-radius: 8px;
+    svg{
+        position: static;
+        cursor: auto;
+        path{
+            color: ${white};
+        }
     }
 `
 
