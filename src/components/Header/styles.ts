@@ -95,6 +95,12 @@ export const StyledDropdown = styled.div`
     -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    @keyframes showDropdown {
+        0% { opacity: 0 }
+        100% { opacity: 1 }
+    }
+    animation-name: showDropdown;
+    animation-duration: 1s;
     ul{
         list-style: none;
         color: ${dropdownBlack};

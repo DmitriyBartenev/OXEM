@@ -71,8 +71,8 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
         }
     };
 
-    return(
-        <StyledPopupBox openPopup={openPopup}>
+    return( 
+        <StyledPopupBox>
             <StyledPopupContainer>
                 <StyledPopup>
                     <h3>Онлайн-заявка</h3>
