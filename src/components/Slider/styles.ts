@@ -93,32 +93,37 @@ export const StyledActions = styled.div`
     justify-content: center;
     align-items: center;
     button{
+        background-color: transparent;
+        border: none;
+    }
+    svg{
+        cursor: pointer;
         width: 24px;
         height: 24px;
-        background-color: transparent;
-        border-radius: 50%;
-        border: solid 2px ${white};
         color: ${white};
-        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: .5;
-        transition: .1s;
-        margin: 0 8px;
-        :hover{
-            svg{
-                width: 8px;
-                height: 16px;
+        transition: .2s;
+        transform: rotateY(-360deg) rotateZ(-90deg);
+        @keyframes countdown {
+            from {
+                stroke-dashoffset: 0px;
             }
+            to{
+                stroke-dashoffset: 113px;
+            }
+        }
+        path:nth-child(2){
+            stroke-dasharray: 113px;
+            stroke-dashoffset: 0px;
+            stroke-linecap: round;
+            color: white;
+            animation: countdown 5s linear infinite forwards;
+        }
+        :hover{
             width: 48px;
             height: 48px;
-            opacity: 1;
-        }
-        :last-child{
-            svg{
-                transform: rotate(180deg);
-            }
         }
     }
 `

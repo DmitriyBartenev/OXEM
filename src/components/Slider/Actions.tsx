@@ -11,15 +11,15 @@ interface ActionsProps {
 
 const Actions: React.FC<ActionsProps> = ({ currentIndex, setCurrentIndex }) => {
     
-    const { Arrow } = icons;
+    const { Circle } = icons;
 
     return(
         <StyledActions>
             <button onClick={() => setCurrentIndex((currentIndex + 5 - 1) % 5)}>
-                <Arrow />
+                <Circle/>
             </button>
             <button onClick={() => setCurrentIndex((currentIndex + 1) % 5)}>
-                <Arrow />
+                <Circle/>
             </button>
         </StyledActions>
     )
