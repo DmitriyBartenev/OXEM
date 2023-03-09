@@ -50,8 +50,7 @@ const Slider: React.FC = () => {
             <StyledSlider> 
                 <Image 
                     src={Object.values(sliderImages)[currentIndex]} 
-                    alt='car image' 
-                    title='car' 
+                    alt='car image'
                     width={800} 
                     height={473}
                     />

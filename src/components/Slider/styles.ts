@@ -114,7 +114,7 @@ export const StyledActions = styled.div`
                 stroke-dashoffset: 113px;
             }
         }
-        path:nth-child(2){
+        path:last-child{
             stroke-dasharray: 113px;
             stroke-dashoffset: 0px;
             stroke-linecap: round;
