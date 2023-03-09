@@ -6,19 +6,20 @@ import axios from "axios";
 import { Inputs } from "types/HomePage";
 import { schema } from "./validation";
 
-import { icons } from "public/_index";
+import Input from "./Input";
+import Icons from "./Icons";
 
 import { 
     StyledPopupBox, 
     StyledPopup, 
     StyledPopupContainer, 
     StyledInputBox, 
-    StyledSubmit, 
-    StyledIcons,
+    StyledSubmit,
     StyledSuccessfulMessage,
     StyledErrorMessage,
 } from "./styles";
-import Input from "./Input";
+
+import { icons } from "public/_index";
 
 interface PopupProps {
     setOpenPopup: Dispatch<SetStateAction<boolean>>
@@ -33,7 +34,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
         resolver: yupResolver(schema)
     });
 
-    const { CloseIcon, WhatsappIcon, TelegramIcon } = icons;
+    const { CloseIcon } = icons;
 
     const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
 
@@ -101,11 +102,10 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                             <button type='submit' disabled={isSuccessful}>Оставить заявку</button>
                         </StyledSubmit>
                     </form>
-                    <StyledIcons>
-                        <WhatsappIcon/>
-                        <TelegramIcon/>
-                    </StyledIcons>
-                    <CloseIcon onClick={() => setOpenPopup(false)}/>
+                    <Icons/>
+                    <CloseIcon 
+                        className='close'
+                        onClick={() => setOpenPopup(false)}/>
                 </StyledPopup>
             </StyledPopupContainer>
         </StyledPopupBox>

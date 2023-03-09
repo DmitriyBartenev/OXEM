@@ -29,7 +29,13 @@ const Input: React.FC<InputProps> = ({ errors, placeholder, register, getValues,
                 disabled={isSuccessful}
                 />
             {
-                !errors && getValues?.length && <StyledIcon><CheckIcon/></StyledIcon>
+                !errors 
+                && 
+                getValues?.length 
+                && 
+                <StyledIcon>
+                    <CheckIcon/>
+                </StyledIcon>
             }
             <p>{errors}</p>
         </StyledInputContainer>

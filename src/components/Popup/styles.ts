@@ -56,7 +56,7 @@ export const StyledPopup = styled.div`
         color: ${black};
         font-weight: 400;
     }
-    svg{
+    .close{
         color: ${lightGray};
         cursor: pointer;
         position: absolute;
@@ -233,7 +233,11 @@ export const StyledIcons = styled.div`
     align-items: center;
     margin-top: 32px;
     svg{
+        cursor: pointer;
         margin: 0 8px;
-        position: static;
+        color: ${lightGray};
+        path{
+            color: ${darkGray};
+        }
     }
 `
