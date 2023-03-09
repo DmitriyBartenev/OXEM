@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Slider from '@/components/Slider';
 import Calculator from '@/components/Calculator';
 
-export default function Home() {
+export default function HomePage() {
 
   const [openPopup, setOpenPopup] = useState<boolean>(false);
 
