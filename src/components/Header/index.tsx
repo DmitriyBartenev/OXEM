@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 
 import Dropdown from "./Dropdown";
@@ -13,10 +13,14 @@ import {
     StyledNav 
 } from './styles';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    openPopup: boolean,
+    setOpenPopup: Dispatch<SetStateAction<boolean>>
+}
+
+const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
 
     const [showDropdown, setShowDropdown] = useState<boolean>(false);
-    const [openPopup, setOpenPopup] = useState<boolean>(false);
 
     const { MainLogo } = images;
 
@@ -50,7 +54,7 @@ const Header: React.FC = () => {
                 </StyledButton>
             </StyledContainer>
             {
-                openPopup && <Popup setOpenPopup={setOpenPopup} openPopup={openPopup}/>
+                openPopup && <Popup setOpenPopup={setOpenPopup}/>
             }
         </StyledHeader>
     )

@@ -25,7 +25,6 @@ type Inputs = {
 }
 
 interface PopupProps {
-    openPopup: boolean,
     setOpenPopup: Dispatch<SetStateAction<boolean>>
 }
 
@@ -37,7 +36,7 @@ const schema = yup.object().shape({
     name: yup.string().required('Name field is a required').matches(nameRegExp, 'Name is not valid')
 });
 
-const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
+const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
 
     const [isSuccessful, setSuccessful] = useState<boolean>(false);
     const [isError, setError] = useState<boolean>(false);
@@ -71,7 +70,7 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
             console.log(status); 
         }
     };
-
+    
     return( 
         <StyledPopupBox>
             <StyledPopupContainer>
@@ -121,14 +120,14 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup, openPopup }) => {
                         }
                         <StyledSubmit>
                             <p>Нажимая на кнопку «Оставить заявку»,  я даю согласие <span>на обработку персональных данных</span></p>
-                            <button type='submit'>Оставить заявку</button>
+                            <button type='submit' disabled={isSuccessful}>Оставить заявку</button>
                         </StyledSubmit>
                     </form>
                     <StyledIcons>
                         <WhatsappIcon/>
                         <TelegramIcon/>
                     </StyledIcons>
-                    <CloseIcon onClick={() => setOpenPopup(!openPopup)}/>
+                    <CloseIcon onClick={() => setOpenPopup(false)}/>
                 </StyledPopup>
             </StyledPopupContainer>
         </StyledPopupBox>

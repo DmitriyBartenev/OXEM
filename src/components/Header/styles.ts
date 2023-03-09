@@ -8,6 +8,7 @@ const blackA = '#575757';
 const dropdownBlack = '#111111';
 const dropdownBorder = '#F3F3F4';
 const lightGray = '#F1F1F1';
+const lightOrange = '#FFA83D';
 
 export const StyledHeader = styled.header`
     width: 100%;
@@ -80,6 +81,9 @@ export const StyledButton = styled.button`
     :hover{
         background-color: ${orange};
         color: ${white};
+    }
+    :active{
+        background-color: ${lightOrange};
     }
 `
 

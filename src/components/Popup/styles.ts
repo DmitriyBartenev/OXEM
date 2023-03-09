@@ -204,9 +204,17 @@ export const StyledSubmit = styled.div`
         cursor: pointer;
         transition: .2s;
         :hover{
-            background-color: ${white};
-            color: ${darkGray};
+            background-color: ${black};
+            border: solid 1px ${black};
+        }
+        :active{
+            background-color: ${darkGray};
             border: solid 1px ${darkGray};
+        }
+        :disabled{
+            background-color: rgba(255, 149, 20, 0.4);
+            border: solid 1px rgba(255, 149, 20, 0.4);
+            cursor: initial;
         }
     }
 `
