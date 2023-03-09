@@ -4,6 +4,7 @@ const white = '#FFFFFF';
 const lightGray = '#F3F3F4';
 const gray = '#828282';
 const darkGray = '#575757';
+const grayish = '#EAEAEB';
 const black = '#111111';
 const orange = '#FF9514';
 const red = 'rgba(255, 71, 60, 1)';
@@ -141,9 +142,16 @@ export const StyledInputContainer = styled.div`
         ::placeholder{
             color: rgba(87, 87, 87, 0.4);   
         }
+        :hover{
+            background-color: ${grayish};
+        }
         :focus{
             border: solid 1px ${orange};
             box-shadow: 0px 0px 4px 3px rgba(255, 149, 20, 0.5);
+            background-color: ${white};
+        }
+        :disabled{
+            opacity: .5;
         }
     }
     p{

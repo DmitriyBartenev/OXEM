@@ -12,9 +12,10 @@ interface InputProps {
     placeholder: string,
     errors: string | undefined,
     getValues: string,
-    register: FieldValues
+    register: FieldValues,
+    isSuccessful: boolean
 }
-const Input: React.FC<InputProps> = ({ errors, placeholder, register, getValues }) => {
+const Input: React.FC<InputProps> = ({ errors, placeholder, register, getValues, isSuccessful }) => {
 
     const { CheckIcon } = icons;
     
@@ -25,6 +26,7 @@ const Input: React.FC<InputProps> = ({ errors, placeholder, register, getValues 
                 placeholder={placeholder}  
                 {...register}
                 className={errors ? 'error' : ''}
+                disabled={isSuccessful}
                 />
             {
                 !errors && getValues?.length && <StyledIcon><CheckIcon/></StyledIcon>

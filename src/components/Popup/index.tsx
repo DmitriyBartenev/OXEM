@@ -72,12 +72,14 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                                 register={{...register('phoneNumber')}}
                                 errors={errors.phoneNumber?.message}
                                 getValues={getValues('phoneNumber')}
+                                isSuccessful={isSuccessful}
                                 />
                             <Input
                                 placeholder="Имя"
                                 register={{...register('name')}}
                                 errors={errors.name?.message}
                                 getValues={getValues('name')}
+                                isSuccessful={isSuccessful}
                                 />
                         </StyledInputBox>
                         {
