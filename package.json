@@ -2,9 +2,12 @@
   "name": "oxem",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "port": 8000
+  },
   "scripts": {
-    "dev": "next dev",
-    "server": "json-server --watch db.json --port 8000",
+    "server": "json-server --watch db.json --port %npm_package_config_port%",
+    "dev": "concurrently \"next dev\" \"npm run server\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
