@@ -44,12 +44,18 @@ const Slider: React.FC = () => {
                 </StyledButton>
             </StyledTextContainer>
             <StyledSlider> 
-                <Image 
-                    src={Object.values(sliderImages)[currentIndex]} 
-                    alt='car image'
-                    width={800} 
-                    height={473}
-                    />
+                {
+                    sliderImages.map((img, index) => (
+                        <Image 
+                        src={img.src} 
+                        alt='car'
+                        width={800} 
+                        height={473}
+                        key={img.id}
+                        className={currentIndex === index ? 'active-img' : ''}
+                        />
+                    ))
+                }
                 <StyledSliderActions>
                     <Indicators 
                         currentIndex={currentIndex}/>

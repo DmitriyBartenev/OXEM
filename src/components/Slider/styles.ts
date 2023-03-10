@@ -10,9 +10,12 @@ export const StyledSliderContainer = styled.section`
     background-color: ${darkBlack};
     border-radius: 32px;
     display: flex;
+    position: relative;
 `
 
 export const StyledTextContainer = styled.div`
+    position: relative;
+    z-index: 2;
     padding: 70px 0 0 70px;
     color: ${white};
     font-weight: 400;
@@ -47,24 +50,29 @@ export const StyledButton = styled.button`
 `
 
 export const StyledSlider = styled.div`
-    position: relative;
     img{
-        opacity: .8;
-        height: 100%;
-        width: 100% 100%;
-        border-radius: 32px;
-        border-bottom-left-radius:  0;
-        border-top-left-radius:  0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0 32px 32px 0;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity ease-in-out .4s;
     }
+    .active-img{
+        opacity: 1;
+    }
+    
 `
 
 export const StyledSliderActions = styled.div`
     position: absolute;
+    right: 0;
     padding: 0 44px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 800px;
     height: 48px;
     bottom: 44px;
     span{

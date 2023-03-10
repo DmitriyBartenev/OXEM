@@ -22,10 +22,10 @@ export const images = {
     MainLogo
 };
 
-export const sliderImages = {
-    Mercedes, 
-    Audi,
-    Bmw,
-    Chevrolet,
-    Porsche
-};
+export const sliderImages = [
+    { id: 1, src: Audi },
+    { id: 2, src: Bmw },
+    { id: 3, src: Chevrolet },
+    { id: 4, src: Mercedes },
+    { id: 5, src: Porsche }
+];

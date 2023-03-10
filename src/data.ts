@@ -41,4 +41,4 @@ export const calculatedData: CalculatedOutput[] = [
         label: 'Ежемесячный платеж от',
         sum: 114_455
     }
-]
+];
