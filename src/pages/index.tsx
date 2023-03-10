@@ -19,8 +19,8 @@ export default function HomePage() {
       </Head>
       <Header openPopup={openPopup} setOpenPopup={setOpenPopup}/>
       <main>
-        <Slider/>
-        <Calculator/>
+        <Slider setOpenPopup={setOpenPopup}/>
+        <Calculator setOpenPopup={setOpenPopup}/>
       </main>
     </>
   )

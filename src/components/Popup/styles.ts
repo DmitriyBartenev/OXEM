@@ -73,6 +73,9 @@ export const StyledPopup = styled.div`
                 color: ${lightGray};
             }
         }
+        :active{
+            color: ${darkGray};
+        }
     }
     p{
         font-size: 16px;

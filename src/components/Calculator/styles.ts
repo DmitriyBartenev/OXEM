@@ -33,8 +33,12 @@ export const StyledButton = styled.button`
     letter-spacing: 1px;
     transition: .2s;
     :hover{
-        background-color: ${white};
-        color: ${orange};
+        background-color: ${darkBlack};
+        border: solid 1px ${darkBlack};
+    }
+    :active{
+        background-color: ${gray};
+        border: solid 1px ${gray};
     }
 `
 

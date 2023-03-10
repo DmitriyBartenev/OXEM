@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 
 import Actions from "./Actions";
@@ -15,7 +15,11 @@ import {
 
 import { sliderImages } from "public";
 
-const Slider: React.FC = () => {
+interface SliderProps {
+    setOpenPopup: Dispatch<SetStateAction<boolean>>
+}
+
+const Slider: React.FC<SliderProps> = ({ setOpenPopup }) => {
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     
@@ -39,7 +43,7 @@ const Slider: React.FC = () => {
             <StyledTextContainer>
                 <h1>Авто в лизинг для физических лиц</h1>
                 <p>Получите машину за 5 дней</p>
-                <StyledButton>
+                <StyledButton onClick={() => setOpenPopup(true)}>
                     Оставить заявку
                 </StyledButton>
             </StyledTextContainer>
@@ -52,6 +56,7 @@ const Slider: React.FC = () => {
                         width={800} 
                         height={473}
                         key={img.id}
+                        draggable={false}
                         className={currentIndex === index ? 'active-img' : ''}
                         />
                     ))

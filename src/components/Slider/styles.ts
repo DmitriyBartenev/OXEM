@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const white = '#FFFFFF';
 const darkBlack = '#000000';
+const black = '#111111';
 const orange = '#FF9514';
+const gray = '#575757';
 
 export const StyledSliderContainer = styled.section`
     margin: 0 48px;
@@ -44,8 +46,10 @@ export const StyledButton = styled.button`
     cursor: pointer;
     transition: .2s;
     :hover{
-        background-color: ${white};
-        color: ${darkBlack};
+        background-color: ${black};
+    }
+    :active{
+        background-color: ${gray};
     }
 `
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import { 
     StyledCalculatedValue, 
@@ -9,10 +9,11 @@ import {
 interface TotalProps {
     carPrice: number,
     deposit: number,
-    duration: number
+    duration: number,
+    setOpenPopup: Dispatch<SetStateAction<boolean>>
 }
 
-const Total:React.FC<TotalProps> = ({ carPrice, deposit, duration }) => {
+const Total:React.FC<TotalProps> = ({ carPrice, deposit, duration, setOpenPopup }) => {
 
     const sum = Math.round(carPrice * (1 - 12 / 100));
 
@@ -31,7 +32,7 @@ const Total:React.FC<TotalProps> = ({ carPrice, deposit, duration }) => {
                 <p>Ежемесячный платеж от</p>
                 <span>{monthlyPayment.toLocaleString().replace(/,/g, ' ')} ₽</span>
             </StyledCalculatedBox>   
-            <StyledButton>
+            <StyledButton onClick={() => setOpenPopup(true)}>
                 Оставить заявку
             </StyledButton>
         </StyledCalculatedValue>

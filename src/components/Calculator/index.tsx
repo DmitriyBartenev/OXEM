@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 
 import InputBox from './InputBox';
 import Total from "./Total";
@@ -10,7 +10,11 @@ import {
     StyledInputs
 } from './styles';
 
-const Calculator: React.FC = () => {
+interface CalculatorProps {
+    setOpenPopup: Dispatch<SetStateAction<boolean>>
+}
+
+const Calculator: React.FC<CalculatorProps> = ({ setOpenPopup }) => {
 
     const [inputValues, setInputValues] = useState<PriceValues>({
         carPrice: '100000',
@@ -25,7 +29,7 @@ const Calculator: React.FC = () => {
             ...inputValues,
             [event.target.name]: event.target.value
         })
-    }
+    };
 
     return(
         <StyledContainer>
@@ -66,6 +70,7 @@ const Calculator: React.FC = () => {
                 carPrice={+carPrice}
                 deposit={+deposit}
                 duration={+duration}
+                setOpenPopup={setOpenPopup}
                 />
         </StyledContainer>
     )

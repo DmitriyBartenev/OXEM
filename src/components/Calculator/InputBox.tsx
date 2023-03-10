@@ -9,14 +9,14 @@ import {
 } from "./styles";
 
 interface InputBoxProps {
-    label: string,
-    name: string,
-    value: string,
-    min: number,
-    max: number,
-    step: number,
-    suffix: string,
-    handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  label: string,
+  name: string,
+  value: string,
+  min: number,
+  max: number,
+  step: number,
+  suffix: string,
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const InputBox: React.FC<InputBoxProps> = ({ label, name, value, min, max, step, suffix, handleInputChange }) => {
