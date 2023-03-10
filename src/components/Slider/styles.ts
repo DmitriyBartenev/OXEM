@@ -62,7 +62,6 @@ export const StyledSlider = styled.div`
     .active-img{
         opacity: 1;
     }
-    
 `
 
 export const StyledSliderActions = styled.div`
@@ -103,6 +102,11 @@ export const StyledActions = styled.div`
     button{
         background-color: transparent;
         border: none;
+        :first-child{
+            svg{
+                transform: rotate(180deg);
+            }
+        }
     }
     svg{
         cursor: pointer;
@@ -113,7 +117,6 @@ export const StyledActions = styled.div`
         justify-content: center;
         align-items: center;
         transition: .2s;
-        transform: rotateY(-360deg) rotateZ(-90deg);
         @keyframes countdown {
             from {
                 stroke-dashoffset: 0px;
@@ -122,11 +125,9 @@ export const StyledActions = styled.div`
                 stroke-dashoffset: 113px;
             }
         }
-        path:last-child{
+        path:nth-child(1){
             stroke-dasharray: 113px;
             stroke-dashoffset: 0px;
-            stroke-linecap: round;
-            color: white;
             animation: countdown 5s linear infinite forwards;
         }
         :hover{

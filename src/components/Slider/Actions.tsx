@@ -16,7 +16,7 @@ const Actions: React.FC<ActionsProps> = ({ currentIndex, setCurrentIndex }) => {
     return(
         <StyledActions>
             <button onClick={() => setCurrentIndex((currentIndex + 5 - 1) % 5)}>
-                <Circle/>    
+                <Circle/> 
             </button>
             <button onClick={() => setCurrentIndex((currentIndex + 1) % 5)}>
                 <Circle/>
