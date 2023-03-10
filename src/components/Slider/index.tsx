@@ -13,15 +13,11 @@ import {
     
 } from './styles';
 
-import { images } from "public";
+import { sliderImages } from "public";
 
 const Slider: React.FC = () => {
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-    const { Mercedes, Audi, Bmw, Chevrolet, Porsche } = images;
-
-    const sliderImages = { Mercedes, Audi, Bmw, Chevrolet, Porsche }; 
     
     useEffect(() => {
         const interval = setInterval(() => {

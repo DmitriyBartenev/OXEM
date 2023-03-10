@@ -3,8 +3,9 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from "axios";
 
-import { Inputs } from "types/HomePage";
+import { Inputs } from "types";
 import { schema } from "./validation";
+import { baseURL } from "config";
 
 import SubmitBox from "./SubmitBox";
 import Input from "./Input";
@@ -28,7 +29,7 @@ const PopupForm:React.FC = () => {
 
         try{
 
-            const response = await axios.post('http://localhost:8000/data', data); 
+            const response = await axios.post(baseURL, data); 
 
             if(response.status >= 200 && response.status < 300){
                 setError(false);

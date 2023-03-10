@@ -1,19 +1,9 @@
-interface Input {
-    id: number,
-    label: string,
-    text: string,
-    min: number,
-    max: number,
-    step: number
-};
+import { 
+    CalculatedInput, 
+    CalculatedOutput 
+} from "types/Inputs";
 
-interface Calculated {
-    id: number,
-    label: string,
-    sum: number
-};
-
-export const inputsData: Input[] = [
+export const inputsData: CalculatedInput[] = [
     {
         id: 1, 
         label: 'Стоимость автомобиля',
@@ -40,7 +30,7 @@ export const inputsData: Input[] = [
     }
 ];
 
-export const calculatedData: Calculated[] = [
+export const calculatedData: CalculatedOutput[] = [
     {
         id: 1,
         label: 'Сумма договора лизинга',

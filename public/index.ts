@@ -19,7 +19,10 @@ export const icons = {
 };
 
 export const images = {
-    MainLogo,
+    MainLogo
+};
+
+export const sliderImages = {
     Mercedes, 
     Audi,
     Bmw,

@@ -3,20 +3,16 @@ import React, { useState } from "react";
 import InputBox from './InputBox';
 import Total from "./Total";
 
+import { PriceValues } from "types";
+
 import { 
     StyledContainer, 
     StyledInputs
 } from './styles';
 
-interface FormValues {
-    carPrice: string,
-    deposit: string,
-    duration: string
-}
-
 const Calculator: React.FC = () => {
 
-    const [inputValues, setInputValues] = useState<FormValues>({
+    const [inputValues, setInputValues] = useState<PriceValues>({
         carPrice: '100000',
         deposit:'50000',
         duration:'1'
