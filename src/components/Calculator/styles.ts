@@ -40,6 +40,9 @@ export const StyledButton = styled.button`
         background-color: ${gray};
         border: solid 1px ${gray};
     }
+    @media (max-width: 1440px) {
+        margin-top: 44px;
+    }
 `
 
 export const StyledInputs = styled.div`
@@ -47,6 +50,10 @@ export const StyledInputs = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `
 
 export const StyledCalculatedValue = styled.div`
@@ -55,7 +62,9 @@ export const StyledCalculatedValue = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    @media (max-width: 1440px) {
+        flex-wrap: wrap;
+    }
 `
 
 export const StyledCalculatorBox = styled.div`
@@ -70,6 +79,15 @@ export const StyledCalculatorBox = styled.div`
     input{
         width: 427px;
         font-weight: 700;
+    }
+    @media (max-width: 1440px) {
+        width: 100%;
+        input{
+            width: 100%;
+        }
+        label{
+            margin-top: 32px;
+        }
     }
 `
 
@@ -103,6 +121,9 @@ export const StyledInputTextBox = styled.div`
             color: ${white};
         }
     }
+    @media (max-width: 1440px) {
+        width: 100%;
+    }
 `
 
 export const StyledInputText = styled.input`
@@ -135,7 +156,6 @@ export const StyledInputRange = styled.input`
 `
 
 export const StyledCalculatedBox = styled.div`
-    min-width: 400px;
     p{
         font-size: 16px;
         line-height: 150%;
@@ -144,5 +164,17 @@ export const StyledCalculatedBox = styled.div`
         font-size: 54px;
         font-weight: 800;
         padding-top: 8px;
+    }
+    :last-child{
+        margin-left: 75px;
+    }
+`
+
+export const StyledCalculated = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: 1440px) {
+        width: 100%;
     }
 `

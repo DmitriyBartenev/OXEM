@@ -3,7 +3,8 @@ import React, { Dispatch, SetStateAction } from "react";
 import { 
     StyledCalculatedValue, 
     StyledCalculatedBox, 
-    StyledButton 
+    StyledButton,
+    StyledCalculated 
 } from './styles';
 
 interface TotalProps {
@@ -24,14 +25,16 @@ const Total:React.FC<TotalProps> = ({ carPrice, deposit, duration, setOpenPopup 
     
     return(
         <StyledCalculatedValue>
-            <StyledCalculatedBox>
-                <p>Сумма договора лизинга</p>
-                <span>{sum.toLocaleString().replace(/,/g, ' ')} ₽</span>
-            </StyledCalculatedBox>   
-            <StyledCalculatedBox>
-                <p>Ежемесячный платеж от</p>
-                <span>{monthlyPayment.toLocaleString().replace(/,/g, ' ')} ₽</span>
-            </StyledCalculatedBox>   
+            <StyledCalculated>
+                <StyledCalculatedBox>
+                    <p>Сумма договора лизинга</p>
+                    <span>{sum.toLocaleString().replace(/,/g, ' ')} ₽</span>
+                </StyledCalculatedBox>   
+                <StyledCalculatedBox>
+                    <p>Ежемесячный платеж от</p>
+                    <span>{monthlyPayment.toLocaleString().replace(/,/g, ' ')} ₽</span>
+                </StyledCalculatedBox>    
+            </StyledCalculated>   
             <StyledButton onClick={() => setOpenPopup(true)}>
                 Оставить заявку
             </StyledButton>
