@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 
 import Header from '@/components/Header';
-
 import Slider from '@/components/Slider';
 import Calculator from '@/components/Calculator';
 

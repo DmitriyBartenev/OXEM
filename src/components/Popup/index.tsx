@@ -9,7 +9,7 @@ import {
     StyledPopupContainer
 } from "./styles";
 
-import { icons } from "public/_index";
+import { icons } from "public";
 
 interface PopupProps {
     setOpenPopup: Dispatch<SetStateAction<boolean>>

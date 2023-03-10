@@ -4,14 +4,14 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 import Popup from "../Popup";
 
-import { images } from "public/_index";
-
 import { 
     StyledHeader, 
     StyledContainer, 
     StyledButton, 
     StyledNav 
 } from './styles';
+
+import { images } from "public";
 
 interface HeaderProps {
     openPopup: boolean,

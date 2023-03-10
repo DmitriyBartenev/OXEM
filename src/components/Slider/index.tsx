@@ -13,7 +13,7 @@ import {
     
 } from './styles';
 
-import { images } from "public/_index";
+import { images } from "public";
 
 const Slider: React.FC = () => {
 

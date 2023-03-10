@@ -6,7 +6,7 @@ import {
     StyledIcon 
 } from './styles';
 
-import { icons } from "public/_index";
+import { icons } from "public";
 
 interface InputProps {
     placeholder: string,
