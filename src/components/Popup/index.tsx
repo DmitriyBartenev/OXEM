@@ -27,9 +27,9 @@ const Popup: React.FC<PopupProps> = ({ setOpenPopup }) => {
                     <p>Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
                     <PopupForm/>
                     <Icons/>
-                    <CloseIcon 
-                        className='close'
-                        onClick={() => setOpenPopup(false)}/>
+                    <button onClick={() => setOpenPopup(false)} className='close'>
+                        <CloseIcon/>
+                    </button>
                 </StyledPopup>
             </StyledPopupContainer>
         </StyledPopupBox>

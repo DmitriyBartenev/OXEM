@@ -156,6 +156,7 @@ export const StyledInputRange = styled.input`
 `
 
 export const StyledCalculatedBox = styled.div`
+    width: 100%;
     p{
         font-size: 16px;
         line-height: 150%;
@@ -168,6 +169,15 @@ export const StyledCalculatedBox = styled.div`
     :last-child{
         margin-left: 75px;
     }
+    @media (max-width: 768px) {
+        p{
+            margin-top: 20px;
+            width: 100%;
+        }
+        :last-child{
+            margin-left: 0px;
+        }
+    }
 `
 
 export const StyledCalculated = styled.div`
@@ -176,5 +186,8 @@ export const StyledCalculated = styled.div`
     align-items: center;
     @media (max-width: 1440px) {
         width: 100%;
+    }
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
     }
 `

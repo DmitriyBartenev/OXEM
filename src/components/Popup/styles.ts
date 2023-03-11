@@ -46,6 +46,12 @@ export const StyledPopupContainer = styled.div`
     padding: 160px 392px;
     border-radius: 32px 32px 0px 0px;
     position: relative;
+    @media (max-width: 768px){
+        padding: 120px 20px;
+    }
+    @media (max-width: 425px){
+        padding: 80px 20px;
+    }
 `
 
 export const StyledPopup = styled.div`
@@ -63,6 +69,8 @@ export const StyledPopup = styled.div`
         top: 48px;
         right: 48px;
         transition: .3s;
+        background-color: transparent;
+        border: none;
         path{
             color: ${gray};
             transition: .3s;
@@ -83,6 +91,9 @@ export const StyledPopup = styled.div`
         color: ${darkGray};
         margin: 24px 0 44px;
         max-width: 466px;
+    }
+    @media (max-width: 768px){
+        min-width: 100%;
     }
 `
 
@@ -119,9 +130,14 @@ export const StyledInputBox = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 768px){
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `
 
 export const StyledInputContainer = styled.div`
+    width: 100%;
     min-height: 80px;
     display: flex;
     flex-direction: column;
@@ -163,6 +179,11 @@ export const StyledInputContainer = styled.div`
         color: ${error};
         margin-top: 5px;
         margin-bottom: 0;
+    }
+    @media (max-width: 768px){
+        input{
+            width: 100%;
+        }
     }
 `
 
@@ -226,6 +247,17 @@ export const StyledSubmit = styled.div`
             background-color: rgba(255, 149, 20, 0.4);
             border: solid 1px rgba(255, 149, 20, 0.4);
             cursor: initial;
+        }
+    }
+    @media (max-width: 768px){
+        justify-content: center;
+        flex-wrap: wrap;
+        p{
+            max-width: 100%;
+            text-align: center;
+        }
+        button{
+            margin-top: 20px;
         }
     }
 `
