@@ -18,6 +18,9 @@ export const StyledContainer = styled.section`
         max-width: 753px;
         margin-bottom: 32px;
     }
+    @media (max-width: 768px){
+        margin: 100px 15px 0;
+    }
 `
 
 export const StyledButton = styled.button`
@@ -42,6 +45,14 @@ export const StyledButton = styled.button`
     }
     @media (max-width: 1440px) {
         margin-top: 44px;
+    }
+    @media (max-width: 500px){
+        padding: 8px 45px;
+        font-size: 22px;
+    }
+    @media (max-width: 375px){
+        padding: 8px 25px;
+        font-size: 22px;
     }
 `
 
@@ -176,6 +187,11 @@ export const StyledCalculatedBox = styled.div`
         }
         :last-child{
             margin-left: 0px;
+        }
+    }
+    @media (max-width: 500px){
+        span{
+            font-size: 40px;
         }
     }
 `
