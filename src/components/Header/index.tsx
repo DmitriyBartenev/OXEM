@@ -3,15 +3,17 @@ import Image from "next/image";
 
 import Dropdown from "./Dropdown";
 import Popup from "../Popup";
+import Navbar from "../Navbar";
 
 import { 
     StyledHeader, 
     StyledContainer, 
     StyledButton, 
-    StyledNav 
+    StyledNav,
+    StyledNavbar
 } from './styles';
 
-import { images } from "public";
+import { icons, images } from "public";
 
 interface HeaderProps {
     openPopup: boolean,
@@ -21,8 +23,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
 
     const [showDropdown, setShowDropdown] = useState<boolean>(false);
+    const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
     const { MainLogo } = images;
+    const { BurgerIcon } = icons;
 
     const onOpenPopup = () => {
         setOpenPopup(true);
@@ -35,11 +39,9 @@ const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
                 <Image src={MainLogo} alt='main-logo' title='LeasingCar' width={200} height={35}/>
                 <p>лизинговая компания</p> 
             </StyledContainer>
-            <StyledContainer>
+            <StyledNavbar>
                 <StyledNav>
-                    <span 
-                        onClick={() => setShowDropdown(!showDropdown)}
-                        >
+                    <span onClick={() => setShowDropdown(!showDropdown)}>
                         Лизинг
                     </span>
                     <span>Каталог</span>
@@ -52,9 +54,12 @@ const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
                     onClick={onOpenPopup}>
                     Оставить заявку
                 </StyledButton>
-            </StyledContainer>
+            </StyledNavbar>
             {
                 openPopup && <Popup setOpenPopup={setOpenPopup}/>
+            }
+            {
+                showNavbar && <Navbar/>
             }
         </StyledHeader>
     )

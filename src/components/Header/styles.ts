@@ -34,7 +34,12 @@ export const StyledContainer = styled.div`
         color: ${blackP};
     }
 `
-    
+
+export const StyledNavbar = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const StyledNav = styled.nav`
     position: relative;
     span{

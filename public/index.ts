@@ -9,13 +9,15 @@ import CloseIcon from './icons/close.svg';
 import TelegramIcon from './icons/telegram.svg';
 import WhatsappIcon from './icons/whatsapp.svg';
 import CheckIcon from './icons/check.svg';
+import BurgerIcon from './icons/burger.svg';
 
 export const icons = {
     Circle,
     CloseIcon,
     TelegramIcon,
     WhatsappIcon,
-    CheckIcon
+    CheckIcon,
+    BurgerIcon
 };
 
 export const images = {
