@@ -15,7 +15,17 @@ export const StyledHeader = styled.header`
     height: 90px;
     padding: 21px 48px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    .burger{
+        cursor: pointer;
+        display: none;
+    }
+    @media screen and (max-width: 1024px){
+        .burger{
+            display: block;
+        }
+    }
 `
 
 export const StyledContainer = styled.div`
@@ -38,6 +48,9 @@ export const StyledContainer = styled.div`
 export const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
+    @media screen and (max-width: 1024px){
+        display: none;
+    }
 `
 
 export const StyledNav = styled.nav`

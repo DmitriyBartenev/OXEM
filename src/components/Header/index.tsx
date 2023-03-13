@@ -31,6 +31,7 @@ const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
     const onOpenPopup = () => {
         setOpenPopup(true);
         setShowDropdown(false);
+        setShowNavbar(false);
     }
     
     return(
@@ -41,7 +42,8 @@ const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
             </StyledContainer>
             <StyledNavbar>
                 <StyledNav>
-                    <span onClick={() => setShowDropdown(!showDropdown)}>
+                    <span 
+                        onClick={() => setShowDropdown(!showDropdown)}>
                         Лизинг
                     </span>
                     <span>Каталог</span>
@@ -55,11 +57,21 @@ const Header: React.FC<HeaderProps> = ({ openPopup, setOpenPopup }) => {
                     Оставить заявку
                 </StyledButton>
             </StyledNavbar>
+            <BurgerIcon 
+                onClick={() => setShowNavbar(!showNavbar)} 
+                className='burger'/>
             {
-                openPopup && <Popup setOpenPopup={setOpenPopup}/>
+                openPopup 
+                && 
+                <Popup 
+                    setOpenPopup={setOpenPopup}/>
             }
             {
-                showNavbar && <Navbar/>
+                showNavbar 
+                && 
+                <Navbar 
+                    setShowNavbar={setShowNavbar} 
+                    onOpenPopup={onOpenPopup}/>
             }
         </StyledHeader>
     )

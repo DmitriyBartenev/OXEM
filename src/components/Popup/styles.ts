@@ -28,10 +28,6 @@ export const StyledPopupBox = styled.div`
         0% { height: 0 }
         100% { height: 100vh }
     }
-    @keyframes hidePopup {
-        100% {height: 0}
-        0% {height: 100vh}
-    }
     animation-name: showPopup;
     animation-duration: 2s;
 `
