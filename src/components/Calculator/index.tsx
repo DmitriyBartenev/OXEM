@@ -3,7 +3,7 @@ import React, { useState, Dispatch, SetStateAction } from "react";
 import InputBox from './InputBox';
 import Total from "./Total";
 
-import { PriceValues } from "types";
+import { PriceValues } from "@/types";
 
 import { 
     StyledContainer, 
