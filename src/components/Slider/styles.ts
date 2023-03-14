@@ -32,6 +32,24 @@ export const StyledTextContainer = styled.div`
         font-weight: 600;
         margin: 32px 0 24px;
     }
+    @media screen and (max-width: 1024px){
+        width: 100%;
+        padding: 70px 0 0 70px;
+    }
+    @media screen and (max-width: 796px){
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        h1{
+            font-size: 36px;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
 `
 
 export const StyledButton = styled.button`
