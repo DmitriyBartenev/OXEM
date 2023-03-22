@@ -6,8 +6,8 @@
   <li>Validation of input data using the React Hook Form library and Yup validation schema.</li>
   <li>Calculation of monthly leasing price based on input parameters.</li>
   <li>Feedback form for users to provide comments and suggestions.</li>
-  <li>Uses Semantic principles for HTML markup</li>
-  <li>Responsive design</li>
+  <li>Uses Semantic principles for HTML markup.</li>
+  <li>Responsive design.</li>
 </ul>
 <h2>Installation</h2>
 <p>To run this application on your local machine, follow these steps:</p>
